@@ -1,38 +1,87 @@
-# create-svelte
+# svelte-loading 
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+> Simple Loading Spinner for Svelte
+## Usage
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
+### install
 ```bash
-# create a new project in the current directory
-npm init svelte
-
-# create a new project in my-app
-npm init svelte my-app
+npm install svelte-loading
 ```
 
-## Developing
+### showLoading
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+```html
+<script lang='ts'>
+  import { showLoading } from 'svelte-loading';
 
-```bash
-npm run dev
+  showLoading()
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+</script>
 ```
 
-## Building
+if you want hide loading component you must call `hideLoading` method.
 
-To create a production version of your app:
+### auto hideLoading
 
-```bash
-npm run build
+```js
+showLoading({ duration: 2000 })
 ```
 
-You can preview the production build with `npm run preview`.
+after 2 seconds loading will auto hide 
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+### change loading color
+
+```js
+showLoading({ color: '#FFF'})
+```
+
+
+## Loading Styles
+### Eclipes
+![](static/Eclipse-1s-200px.png)
+### Infinity 
+![](static/Infinity-1s-200px.png)
+### Ring
+![](static/Ring-1s-200px.png)
+### Ripple
+![](static/Ring-1s-200px.png)
+### Spinner (default)
+![](static/Spinner-1s-200px.png)
+
+## Svelte 
+
+`App.svelte`
+
+```html
+<script lang='ts'>
+  import { Loading, showLoading, LoadingEnum } from '../lib';
+
+  showLoading()
+
+</script>
+
+...
+
+<Loading />
+```
+
+## Options
+
+```ts
+export enum LoadingEnum {
+  Eclipes,
+  Infinity,
+  Ring,
+  Ripple,
+  Spinner
+}
+
+export type LoadingTypes = {
+  size?: string | number
+  color?: string
+  duration?: number
+  type?: LoadingEnum
+}
+```
+
+

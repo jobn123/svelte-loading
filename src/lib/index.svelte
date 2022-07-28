@@ -1,21 +1,31 @@
 <script lang="ts">
-  import { fade } from "svelte/transition";
+  import { fade } from "svelte/transition"
   import { LoadingEnum } from './loading.type'
-  import { loadingType, isLoading } from "./store";
+  import { loadingType, isLoading, loadingOpts } from "./store"
   import Spinner from './components/Spinner.svelte'
   import Eclipse from './components/Eclipse.svelte'
+  import Infinity from './components/Infinity.svelte'
+  import Ring from './components/Ring.svelte'
+  import Ripple from './components/Ripple.svelte'
   
-  isLoading.subscribe((n) => console.log(n))
+  let opts = $loadingOpts
+
 </script>
 
 {#if $isLoading}
   <div class="container-loading" transition:fade>
     {#if $loadingType === LoadingEnum.Eclipes }
-      <Spinner />
+      <Eclipse opts={opts} />
     {:else if $loadingType === LoadingEnum.Spinner}
-      <Eclipse />
+      <Spinner opts={opts} />
+    {:else if $loadingType === LoadingEnum.Infinity}
+      <Infinity opts={opts} />
+    {:else if $loadingType === LoadingEnum.Ring}
+      <Ring opts={opts} />
+    {:else if $loadingType === LoadingEnum.Ripple}
+      <Ripple opts={opts} />
     {:else}
-      <Spinner />
+      <Spinner opts={opts} />
     {/if}
   </div>
 {/if}
@@ -30,5 +40,6 @@
     z-index: 9;
     display: flex;
     align-items: center;
+    background: transprent;
   }
 </style>

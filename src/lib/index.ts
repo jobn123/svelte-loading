@@ -1,12 +1,12 @@
+import { showLoading, hideLoading } from "./store"
+import type { LoadingTypes } from './loading.type'
+import { LoadingEnum } from './loading.type';
 import Loading from './index.svelte'
-
-import { loadingType, showLoading, hideLoading } from "./store";
-
-// export default ;
 
 export {
   Loading,
   showLoading,
   hideLoading,
-  loadingType
+  LoadingEnum,
+  LoadingTypes
 }
