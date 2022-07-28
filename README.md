@@ -44,7 +44,7 @@ showLoading({ color: '#FFF'})
 ### Ring
 ![](static/Ring-1s-200px.png)
 ### Ripple
-![](static/Ring-1s-200px.png)
+![](static/Ripple-1s-200px.png)
 ### Spinner (default)
 ![](static/Spinner-1s-200px.png)
 
@@ -54,7 +54,7 @@ showLoading({ color: '#FFF'})
 
 ```html
 <script lang='ts'>
-  import { Loading, showLoading, LoadingEnum } from '../lib';
+  import { Loading, showLoading, LoadingEnum } from 'svelte-loading';
 
   showLoading()
 
