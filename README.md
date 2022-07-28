@@ -1,6 +1,7 @@
 # svelte-loading 
 
 > Simple Loading Spinner for Svelte
+
 ## Usage
 
 ### install
@@ -35,18 +36,26 @@ after 2 seconds loading will auto hide
 showLoading({ color: '#FFF'})
 ```
 
+### change loading style
+
+```js
+import { showLoading, LoadingEnum } from 'svelte-loading';
+
+showLoading({ type: LoadingEnum.Infinity })
+```
+
 
 ## Loading Styles
 ### Eclipes
-![](static/Eclipse-1s-200px.png)
+![Eclipse-1s-200px.png](https://s2.loli.net/2022/07/28/O8I1W9RloG2MiwX.png)
 ### Infinity 
-![](static/Infinity-1s-200px.png)
+![Infinity-1s-200px.png](https://s2.loli.net/2022/07/28/4ZIKrlbj9sw2uaQ.png)
 ### Ring
-![](static/Ring-1s-200px.png)
+![Ring-1s-200px.png](https://s2.loli.net/2022/07/28/kehFzLvB3X2Y7T4.png)
 ### Ripple
-![](static/Ripple-1s-200px.png)
+![Ripple-1s-200px.png](https://s2.loli.net/2022/07/28/549JkZwBYMohfUx.png)
 ### Spinner (default)
-![](static/Spinner-1s-200px.png)
+![Spinner-1s-200px.png](https://s2.loli.net/2022/07/28/6Yp8o2FKLDeuByk.png)
 
 ## Svelte 
 
